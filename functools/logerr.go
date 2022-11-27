@@ -2,6 +2,10 @@ package functools
 
 import "log"
 
+func PassErr[T any](t T, err error) T {
+	return t
+}
+
 func LogErr[T any](t T, err error) T {
 	if err != nil {
 		log.Println(err)
