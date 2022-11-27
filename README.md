@@ -44,7 +44,14 @@ func MaptoStr[T any](a []T) []string
 Equivalent to `Map(fmt.Sprintf, a)`
 
 ## Filter
+### Filter
 ```go
 func Filter[T any](f func(T) bool, a []T) []T
 ```
 Returns a slice of all items `v` in `a` for which `f(v)` returns `true`
+
+### Find
+```go
+func Find[T any](f func(T) bool, a []T) (int, T)
+```
+Returns first index and item `v` in `a` for which `f(v)` returns `true`

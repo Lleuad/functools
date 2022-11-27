@@ -11,7 +11,7 @@ func Filter[T any](f func(T) bool, slice []T) (out []T) {
 	return
 }
 
-func Find[T comparable](f func(T) bool, slice []T) (i int, out T) {
+func Find[T any](f func(T) bool, slice []T) (i int, out T) {
 	for i, out = range slice {
 		if f(out) {
 			return
