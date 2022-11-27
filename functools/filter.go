@@ -10,3 +10,14 @@ func Filter[T any](f func(T) bool, slice []T) (out []T) {
 
 	return
 }
+
+func Find[T comparable](f func(T) bool, slice []T) (i int, out T) {
+	for i, out = range slice {
+		if f(out) {
+			return
+		}
+	}
+
+	var null T
+	return -1, null
+}
